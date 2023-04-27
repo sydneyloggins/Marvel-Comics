@@ -26,6 +26,10 @@ header {
     margin: 20px;
 }
 
+.navbar-brand:hover {
+    color: rgb(140, 182, 196);
+}
+
 button {
     color:#fff;
     background-color: #333;
