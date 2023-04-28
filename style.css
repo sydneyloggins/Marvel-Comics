@@ -27,7 +27,7 @@ header {
 }
 
 .navbar-brand:hover {
-    color: rgb(140, 182, 196);
+    color: rgb(102, 135, 146);
 }
 
 button {
@@ -81,3 +81,4 @@ button {
     position: relative;
     opacity: 0.7;
 }
+
