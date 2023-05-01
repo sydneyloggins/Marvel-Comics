@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+ 
+    line-height: 1.5;
+
+}
+
+.container {
+    background: #b3e5ea;
+    max-width: 1000px;
+    margin: auto;
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -82,3 +95,42 @@ button {
     opacity: 0.7;
 }
 
+.search {
+    display: flex;
+}
+
+.search input {
+    flex: 1;
+}
+
+img.poster {
+    max-width: 200px;
+}
+
+.card {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 10px;
+    color: #00838f;
+}
+
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#result h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #00838f;
+}

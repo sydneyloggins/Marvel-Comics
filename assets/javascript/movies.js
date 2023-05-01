@@ -4,6 +4,7 @@ var searchBtn = document.getElementById('search-btn');
 var result = document.getElementById('result');
 
 var getMovie = function() {
+    console.log('getMovie')
     var movieName = movieNameRef.value;
     var url = `http://www.omdbapi.com/?t=${movieName}&apikey=d46c926d`;
 
@@ -18,7 +19,7 @@ var getMovie = function() {
                 if (data.Response == "True") {
                     result.innerHTML = `
                     <div class="card">
-                        <img src=${data.Poster} class = "poster">
+                        <img src=${data.Poster} class="poster">
                         <div> 
                             <h2>${data.Title}</h2>
                         </div>
