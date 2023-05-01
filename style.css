@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.container {
+    position: relative;
+    z-index: 1;
+  }
 header {
     background-color: #333;
     color: #fff;
@@ -17,7 +20,6 @@ h1 {
 }
 
 .background-image {
-    background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6e9d8a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGNvbnRyb2xsZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -26,3 +28,80 @@ h1 {
     position: relative;
     opacity: 0.7;
 }
+.comic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.comic-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.comic-thumbnail {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.comic-link {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.comic-link:hover {
+  color: #f00;
+  transform: scale(1.05);
+}
+  /* Styling for the comic cards */
+  .comic-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .comic-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .comic-thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .comic-title {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .comic-writers {
+    margin: 5px;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+  }
