@@ -1,17 +1,19 @@
+// Variables stored in elements on page
 var key = "d46c926d";
 var movieNameRef = document.getElementById('movie-name');
 var searchBtn = document.getElementById('search-btn');
 var result = document.getElementById('result');
 
+// Function to get movie data from API
 var getMovie = function() {
     console.log('getMovie')
     var movieName = movieNameRef.value;
     var url = `http://www.omdbapi.com/?t=${movieName}&apikey=d46c926d`;
-
+// If statement to check if movie name is empty
     if (movieName.length <= 0) {
         result.innerHTML = 'Please enter a movie name';
     }
-
+// Else statement to fetch data from API
     else {
         fetch(url)
             .then((resp) => resp.json())
@@ -36,7 +38,7 @@ var getMovie = function() {
                 `;
 
                 }
-
+// Else statement to display error message if movie name is not found
                 else {
                     result.innerHTML = `<h3 class ='msg'>${data.Error}</h3>`;
 
@@ -48,6 +50,6 @@ var getMovie = function() {
 
     }
 };
-
+// Event listeners for search button and window load
 searchBtn.addEventListener('click', getMovie);
 window.addEventListener('load', getMovie);
