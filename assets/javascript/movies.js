@@ -11,7 +11,7 @@ var getMovie = function() {
     var url = `http://www.omdbapi.com/?t=${movieName}&apikey=d46c926d`;
 // If statement to check if movie name is empty
     if (movieName.length <= 0) {
-        result.innerHTML = 'Please enter a movie name';
+        result.innerHTML = '';
     }
 // Else statement to fetch data from API
     else {
