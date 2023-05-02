@@ -21,7 +21,7 @@ var getMovie = function() {
                 if (data.Response == "True") {
                     result.innerHTML = `
                     <div class="card">
-                        <img src=${data.Poster} class="poster">
+                        <div><img src=${data.Poster} class="poster"></div>
                         <div> 
                             <h2>${data.Title}</h2>
                         </div>
@@ -30,11 +30,12 @@ var getMovie = function() {
                             <span>Year: ${data.Year}</span>
                             <span>Genre: ${data.Genre}</span>
                         </div>
+                        <h3>Plot</h3>
+                        <p>${data.Plot}</p>
+                        <h3>Actors</h3>
+                        <p>${data.Actors}</p>
                     </div>
-                    <h3>Plot</h3>
-                    <p>${data.Plot}</p>
-                    <h3>Actors</h3>
-                    <p>${data.Actors}</p>
+                   
                 `;
 
                 }
