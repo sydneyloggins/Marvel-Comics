@@ -4,6 +4,7 @@ const hash = "197a42e7d6346be04171ca1d7be555dd";
 const ts = 1;
 
 let comics = [];
+let selectedComics = JSON.parse(localStorage.getItem("selectedComics")) || [];
 
 async function getComics(searchQuery) {
   const response = await fetch(
@@ -59,42 +60,58 @@ function displayComics(comicsToDisplay) {
   comicsContainer.style.display = "flex";
   comicsContainer.style.flexWrap = "wrap";
   comicsContainer.style.zIndex = "1";
+  comicsContainer.style.justifyContent = "center";
+  comicsContainer.style.alignItems = "center";
 
   comicsToDisplay.forEach((comic) => {
-    const comicDiv = document.createElement("div");
+    const comicCard = document.createElement("div");
+    comicCard.classList.add("comic-card");
+    comicCard.style.height = "600px"; // set a fixed height for the card
+    comicCard.style.width = "300px  "; // set a fixed width for the card
     const thumbnailImg = document.createElement("img");
     thumbnailImg.src = comic.thumbnail;
     thumbnailImg.alt = `${comic.title} thumbnail`;
     thumbnailImg.classList.add("comic-thumbnail");
-    comicDiv.appendChild(thumbnailImg);
-    const comicLink = document.createElement("a");
-    comicLink.href = comic.url;
-    comicLink.textContent = comic.title;
-    comicLink.classList.add("comic-link");
-    comicDiv.appendChild(comicLink);
-    comicsContainer.appendChild(comicDiv);
-
-    comicDiv.style.width = "200px";
-    comicDiv.style.margin = "20px";
-
-    comicDiv.addEventListener("click", () => {
+    comicCard.appendChild(thumbnailImg);
+    
+    const titleLink = document.createElement("a"); // create an anchor tag
+    titleLink.href = comic.url; // set the href attribute to the comic's URL
+    titleLink.target = "_blank"; // open the link in a new tab
+    const title = document.createElement("h2");
+    title.textContent = comic.title;
+    title.classList.add("comic-link");
+    titleLink.appendChild(title); // wrap the title in the anchor tag
+    comicCard.appendChild(titleLink);
+    
+    const addToSelectedButton = document.createElement("button");
+    addToSelectedButton.classList.add("button", "is-danger", "is-outlined", "remove-button");
+    addToSelectedButton.textContent = "Add to collection";
+    comicCard.appendChild(addToSelectedButton);
+    
+    comicsContainer.appendChild(comicCard);
+    
+    addToSelectedButton.addEventListener("click", () => {
+      selectedComics.push({
+        title: comic.title,
+        thumbnail: comic.thumbnail,
+        url: comic.url,
+        timestamp: new Date().getTime(),
+      });
       localStorage.setItem(
-        "selectedComic",
-        JSON.stringify({
-          title: comic.title,
-          thumbnail: comic.thumbnail,
-          url: comic.url,
-          timestamp: new Date().getTime(),
-        })
+        "selectedComics",
+        JSON.stringify(selectedComics)
       );
       console.log("Selected comic stored in local storage.");
-      window.location.href = "collections.html";
+      console.log(selectedComics);
     });
   });
 }
 
+
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", search);
+
+
 
 const searchCategorySelect = document
 

@@ -35,28 +35,39 @@ function displayLatestComics() {
 
   latestComicsContainer.style.display = "flex";
   latestComicsContainer.style.flexWrap = "wrap";
+  latestComicsContainer.style.justifyContent = "center";
+  latestComicsContainer.style.alignItems = "center";
+
 
   latestComics.forEach((comic) => {
-    const comicDiv = document.createElement("div");
+    const comicCard = document.createElement("div");
+    comicCard.classList.add("card");
+    comicCard.style.width = "400px";
+    comicCard.style.margin = "20px";
+
     const thumbnailImg = document.createElement("img");
     thumbnailImg.src = comic.thumbnail;
     thumbnailImg.alt = `${comic.title} thumbnail`;
     thumbnailImg.classList.add("comic-thumbnail");
-    comicDiv.appendChild(thumbnailImg);
+    comicCard.appendChild(thumbnailImg);
+
+    const cardContent = document.createElement("div");
+    cardContent.classList.add("card-content");
+
     const comicLink = document.createElement("a");
     comicLink.href = comic.url;
+    comicLink.target = "_blank";
     comicLink.textContent = comic.title;
     comicLink.classList.add("comic-link");
-    comicDiv.appendChild(comicLink);
-    latestComicsContainer.appendChild(comicDiv);
-
-    comicDiv.style.width = "200px";
-    comicDiv.style.margin = "20px";
+    cardContent.appendChild(comicLink);
 
     // Display the writers for the comic
     const writers = document.createElement("p");
     writers.textContent = `Writers: ${comic.writers.join(", ")}`;
-    comicDiv.appendChild(writers);
+    cardContent.appendChild(writers);
+
+    comicCard.appendChild(cardContent);
+    latestComicsContainer.appendChild(comicCard);
   });
 }
 
