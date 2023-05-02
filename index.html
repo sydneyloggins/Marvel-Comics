@@ -14,10 +14,10 @@
     <h1>Marvel Beyond the Multiverse</h1>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-          <a class="navbar-item">
+          <a class="navbar-item"href="new-comics.html">
             New
           </a>
-          <a class="navbar-item">
+          <a class="navbar-item"href="collections.html">
             Collection
           </a>
           <a class="navbar-item">
@@ -31,28 +31,33 @@
 </header>
 
 <section class = "background-image"><img src="assets/joel-muniz-yRQ6EL25vxU-unsplash.jpg" alt="" srcset=""></section>
+
  
          
                           
 <div class="field has-addons has-addons-centered">
   <p class="control">
     <span class="select">
-      <select>
-        <option>Character</option>
-        <option>Genre</option>
-        <option>Title</option>
-        <option>Creator</option>
+      <select id="searchCategory">
+        <option value = "characters">Character</option>
+        <option value = "title">Title</option>
+        <option value = "creators">Creator</option>
       </select>
     </span>
   </p>
   <p class="control">
-    <input class="input" type="text" placeholder="Anything Marvel">
+    <input class="input" id="searchBar" type="text" placeholder="Anything Marvel">
   </p>
   <p class="control">
-    <a id="inputValue" class="button is-primary">
+    <a id="searchButton" class="button is-primary">
       Search
     </a>
   </p>
+        <div id="comicsContainer"></div>
+      <div id="comicsList"></div>
+
 </div>
+
+<script src="./assets/javascript/script.js"></script>
 </body>
 </html>
