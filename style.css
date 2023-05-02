@@ -90,6 +90,11 @@ button {
     opacity: 0.7;
 }
 
+#movie-name {
+    font-size: large;
+    font-weight: 500;
+    margin-left: 10px;
+}
 .search {
     display: flex;
 }
@@ -100,8 +105,9 @@ button {
 
 #search-btn {
     padding: 10px;
-    background-color: lightblue;
-    color: black;
+    background-color: hsl(171, 100%, 41%);
+    color: white;
+    font-weight: 500;
 }
 
 img.poster {
@@ -132,7 +138,8 @@ img.poster {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    margin-left: 10px;
+ 
     
 }
 
