@@ -4,19 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
- 
-    line-height: 1.5;
-
-}
-
-.container {
-    background: #fff;
-    max-width: 1000px;
-    margin: auto;
-}
-
 header {
     background-color: #333;
     color: #fff;
@@ -63,30 +50,10 @@ button {
 }
 
 
-.btn-secondary,
-.btn-secondary:focus,
-.btn-secondary:active
 
 
- {
-    color: #fff;
-    background-color: #00838f !important;
-    border-color: #00838f !important;
-    box-shadow: none;
-}
 
 
-.advanced{
-
-    color: #00838f !important;
-}
-
-.form-control:focus{
-    box-shadow: none;
-    border: 1px solid #00838f;
-
-
-}
 
 .background-image {
     background-image: url("https://images.unsplash.com/photo-1517245386807-9b4d0d6e9d8a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMGNvbnRyb2xsZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
