@@ -1,3 +1,4 @@
+
 const apiKey = "ad573bd1b9ca2b657249afd5814b24dc";
 const hash = "197a42e7d6346be04171ca1d7be555dd";
 const ts = 1;
@@ -107,3 +108,4 @@ searchBar.addEventListener("keyup", (event) => {
 
 
 getComics();
+

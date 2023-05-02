@@ -13,12 +13,14 @@ header {
     padding: 1rem;
     text-align: center;
 }
+
 h1 {
     font-size: 48px;
+
 }
 
 .background-image {
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     background-position: center;
     height: 25vh;
@@ -38,6 +40,7 @@ h1 {
   background-color: #fff;
   transition: all 0.3s ease-in-out;
 }
+
 
 .comic-container:hover {
   transform: translateY(-5px);
@@ -99,3 +102,4 @@ h1 {
     text-align: center;
   }
  
+
