@@ -33,6 +33,10 @@ header {
    
 }
 
+.navbar-item {
+    color: white
+}
+
 .navbar-brand {
     text-decoration: none;
     color: #fff;
