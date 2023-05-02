@@ -57,6 +57,7 @@ function displayComics(comicsToDisplay) {
 
   comicsContainer.style.display = "flex";
   comicsContainer.style.flexWrap = "wrap";
+  comicsContainer.style.zIndex = "1";
 
   comicsToDisplay.forEach((comic) => {
     const comicDiv = document.createElement("div");
