@@ -1,9 +1,10 @@
+// const that will be used to fetch the latest comics from the Marvel API
 const apiKey = "ad573bd1b9ca2b657249afd5814b24dc";
 const hash = "197a42e7d6346be04171ca1d7be555dd";
 const ts = 1;
-
+// Created an empty array to store the comics that will be fetched from the API
 let latestComics = [];
-
+// Fetches the latest comics from the Marvel API and stores them in the latestComics array 
 async function getLatestComics() {
   const response = await fetch(
     `https://gateway.marvel.com/v1/public/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=20&orderBy=-modified`
@@ -26,23 +27,22 @@ async function getLatestComics() {
     url: comic.urls[0].url,
   }));
 }
-
+// function which displays the latest comics in the latestComicsContainer div on the page
 function displayLatestComics() {
-  const latestComicsContainer = document.getElementById(
-    "latestComicsContainer"
-  );
+  const latestComicsContainer = document.getElementById("latestComicsContainer");
+// clears the latestComicsContainer div
   latestComicsContainer.innerHTML = "";
-
   latestComicsContainer.style.display = "flex";
   latestComicsContainer.style.flexWrap = "wrap";
   latestComicsContainer.style.justifyContent = "center";
   latestComicsContainer.style.alignItems = "center";
 
-
+// loops through the latestComics array and creates a div for each comic, then appends the div to the latestComicsContainer div 
   latestComics.forEach((comic) => {
     const comicCard = document.createElement("div");
-    comicCard.classList.add("card");
-    comicCard.style.width = "400px";
+    comicCard.classList.add("comic-card");
+    comicCard.style.height = "700px";
+    comicCard.style.width = "400px  ";
     comicCard.style.margin = "20px";
 
     const thumbnailImg = document.createElement("img");
@@ -70,7 +70,7 @@ function displayLatestComics() {
     latestComicsContainer.appendChild(comicCard);
   });
 }
-
+// function which is called when the page loads
 async function init() {
   await getLatestComics();
   displayLatestComics();

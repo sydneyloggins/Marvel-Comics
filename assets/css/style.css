@@ -28,9 +28,10 @@ h1 {
     background-position: center;
     height: 25vh;
     width: 100%;
-    position: relative;
-    opacity: 0.55;
+    position: fixed;
+    opacity: 1;
     z-index: -1;
+    top: 0%;
 }
 .comic-container {
   display: flex;
@@ -70,16 +71,16 @@ h1 {
 }
   /* Styling for the comic cards */
   .comic-card {
+    background-image: linear-gradient(to bottom, #ed1d24 0%, #fff 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 200px;
     margin: 20px;
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-
+    padding: 20px;
   }
 
   .comic-card:hover {
@@ -131,29 +132,5 @@ h1 {
   .card.custom-card .card-footer .card-footer-item {
     padding: 0;
     margin: 0;
-  }
-  
-  .add-to-selected-button {
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    padding: 10px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .add-to-selected-button:hover {
-    background-color: #0062cc
-  }
-
-  .comic-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
   }
   
