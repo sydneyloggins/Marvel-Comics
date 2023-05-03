@@ -12,11 +12,6 @@ async function getComics(searchQuery) {
   var response = await fetch(`https://gateway.marvel.com/v1/public/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&titleStartsWith=${searchQuery}`);
   var data = await response.json();
 
-  if (data.data.count === 0) {
-    console.log("No results found.");
-    return;
-  }
-
 // object destructuring to get the data from the API response
   comics = data.data.results.map((comic) => ({
     title: comic.title,
@@ -111,10 +106,7 @@ function displayComics(comicsToDisplay) {
           url: comic.url,
           timestamp: new Date().getTime(),
         });
-        localStorage.setItem(
-          "selectedComics",
-          JSON.stringify(selectedComics)
-        );
+        localStorage.setItem("selectedComics", JSON.stringify(selectedComics));
         modalContent = "Comic added to your collection!";
         console.log("Selected comic stored in local storage.");
         console.log(selectedComics);

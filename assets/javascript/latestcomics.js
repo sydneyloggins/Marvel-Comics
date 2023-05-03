@@ -1,20 +1,15 @@
-// const that will be used to fetch the latest comics from the Marvel API
-const apiKey = "ad573bd1b9ca2b657249afd5814b24dc";
-const hash = "197a42e7d6346be04171ca1d7be555dd";
-const ts = 1;
+// var that will be used to fetch the latest comics from the Marvel API
+var apiKey = "ad573bd1b9ca2b657249afd5814b24dc";
+var hash = "197a42e7d6346be04171ca1d7be555dd";
+var ts = 1;
 // Created an empty array to store the comics that will be fetched from the API
 let latestComics = [];
 // Fetches the latest comics from the Marvel API and stores them in the latestComics array 
 async function getLatestComics() {
-  const response = await fetch(
+  var response = await fetch(
     `https://gateway.marvel.com/v1/public/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=20&orderBy=-modified`
   );
-  const data = await response.json();
-
-  if (data.data.count === 0) {
-    console.log("No results found.");
-    return;
-  }
+  var data = await response.json();
 
   latestComics = data.data.results.map((comic) => ({
     title: comic.title,
@@ -29,7 +24,7 @@ async function getLatestComics() {
 }
 // function which displays the latest comics in the latestComicsContainer div on the page
 function displayLatestComics() {
-  const latestComicsContainer = document.getElementById("latestComicsContainer");
+  var latestComicsContainer = document.getElementById("latestComicsContainer");
 // clears the latestComicsContainer div
   latestComicsContainer.innerHTML = "";
   latestComicsContainer.style.display = "flex";
@@ -39,22 +34,22 @@ function displayLatestComics() {
 
 // loops through the latestComics array and creates a div for each comic, then appends the div to the latestComicsContainer div 
   latestComics.forEach((comic) => {
-    const comicCard = document.createElement("div");
+    var comicCard = document.createElement("div");
     comicCard.classList.add("comic-card");
     comicCard.style.height = "700px";
     comicCard.style.width = "400px  ";
     comicCard.style.margin = "20px";
 
-    const thumbnailImg = document.createElement("img");
+    var thumbnailImg = document.createElement("img");
     thumbnailImg.src = comic.thumbnail;
     thumbnailImg.alt = `${comic.title} thumbnail`;
     thumbnailImg.classList.add("comic-thumbnail");
     comicCard.appendChild(thumbnailImg);
 
-    const cardContent = document.createElement("div");
+    var cardContent = document.createElement("div");
     cardContent.classList.add("card-content");
 
-    const comicLink = document.createElement("a");
+    var comicLink = document.createElement("a");
     comicLink.href = comic.url;
     comicLink.target = "_blank";
     comicLink.textContent = comic.title;
@@ -62,7 +57,7 @@ function displayLatestComics() {
     cardContent.appendChild(comicLink);
 
     // Display the writers for the comic
-    const writers = document.createElement("p");
+    var writers = document.createElement("p");
     writers.textContent = `Writers: ${comic.writers.join(", ")}`;
     cardContent.appendChild(writers);
 
@@ -71,9 +66,9 @@ function displayLatestComics() {
   });
 }
 // function which is called when the page loads
-async function init() {
+async function newComics() {
   await getLatestComics();
   displayLatestComics();
 }
 
-init();
+newComics();
