@@ -8,7 +8,7 @@ var result = document.getElementById('result');
 var getMovie = function() {
     console.log('getMovie')
     var movieName = movieNameRef.value;
-    var url = `http://www.omdbapi.com/?t=${movieName}&apikey=d46c926d`;
+    var url = `https://www.omdbapi.com/?t=${movieName}&apikey=d46c926d`;
 // If statement to check if movie name is empty
     if (movieName.length <= 0) {
         result.innerHTML = '';
