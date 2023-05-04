@@ -43,3 +43,4 @@ Upon loading, you will see the title of the website, followed by a navigation ba
 14. Tech Projects. Add image/screenshot of your project to your Github repository. (https://www.youtube.com/watch?v=NVibWKkon74). (2023).
 
 ## Screenshots
+![Screenshot 2023-05-03 194115](https://user-images.githubusercontent.com/127446403/236087249-4a0b39b4-8110-4b0d-9def-35c8006ba7db.png)
