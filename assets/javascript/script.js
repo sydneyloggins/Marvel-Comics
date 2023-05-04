@@ -23,6 +23,7 @@ async function getComics(searchQuery) {
     url: comic.urls[0].url,
   }));
 }
+
 // function which grabs the user's search query and search category, then filters the comics array based on the search category and search query
 async function search() {
   var searchBar = document.getElementById("searchBar");
